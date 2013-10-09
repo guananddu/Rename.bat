@@ -41,10 +41,15 @@ echo $renameType;
 handle() {
     filename=$1;
     #find the num
-    awk 'BEGIN{
-            print match("'"$filename"'", /wma/g);
-            print "'"$filename"'";
-        }';
+    awk 'BEGIN {
+        $name = "'"$filename"'";
+        print "tail=",+ substr( $name, match( $name, /[1-9]/ ) );
+    }' | sed 's/\s//g' > temp.sh;
+
+    source ./temp.sh;
+    #handle
+    echo $tail;
+    rm ./temp.sh;
 }
 
 #start
