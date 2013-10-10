@@ -1,19 +1,19 @@
-ÓÃ·¨: grep [Ñ¡Ïî]... PATTERN [FILE]...
-ÔÚÃ¿¸ö FILE »òÊÇ±ê×¼ÊäÈëÖÐ²éÕÒ PATTERN¡£
-Ä¬ÈÏµÄ PATTERN ÊÇÒ»¸ö»ù±¾ÕýÔò±í´ïÊ½(ËõÐ´Îª BRE)¡£
-ÀýÈç: grep -i 'hello world' menu.h main.c
+ç”¨æ³•: grep [é€‰é¡¹]... PATTERN [FILE]...
+åœ¨æ¯ä¸ª FILE æˆ–æ˜¯æ ‡å‡†è¾“å…¥ä¸­æŸ¥æ‰¾ PATTERNã€‚
+é»˜è®¤çš„ PATTERN æ˜¯ä¸€ä¸ªåŸºæœ¬æ­£åˆ™è¡¨è¾¾å¼(ç¼©å†™ä¸º BRE)ã€‚
+ä¾‹å¦‚: grep -i 'hello world' menu.h main.c
 
-ÕýÔò±í´ïÊ½Ñ¡ÔñÓë½âÊÍ:
-  -E, --extended-regexp     PATTERN ÊÇÒ»¸ö¿ÉÀ©Õ¹µÄÕýÔò±í´ïÊ½(ËõÐ´Îª ERE)
-  -F, --fixed-strings       PATTERN ÊÇÒ»×éÓÉ¶ÏÐÐ·û·Ö¸ôµÄ¶¨³¤×Ö·û´®¡£
-  -G, --basic-regexp        PATTERN ÊÇÒ»¸ö»ù±¾ÕýÔò±í´ïÊ½(ËõÐ´Îª BRE)
-  -P, --perl-regexp         PATTERN ÊÇÒ»¸ö Perl ÕýÔò±í´ïÊ½
-  -e, --regexp=PATTERN      ÓÃ PATTERN À´½øÐÐÆ¥Åä²Ù×÷
-  -f, --file=FILE           ´Ó FILE ÖÐÈ¡µÃ PATTERN
-  -i, --ignore-case         ºöÂÔ´óÐ¡Ð´
-  -w, --word-regexp         Ç¿ÖÆ PATTERN ½öÍêÈ«Æ¥Åä×Ö´Ê
-  -x, --line-regexp         Ç¿ÖÆ PATTERN ½öÍêÈ«Æ¥ÅäÒ»ÐÐ
-  -z, --null-data           Ò»¸ö 0 ×Ö½ÚµÄÊý¾ÝÐÐ£¬µ«²»ÊÇ¿ÕÐÐ
+æ­£åˆ™è¡¨è¾¾å¼é€‰æ‹©ä¸Žè§£é‡Š:
+  -E, --extended-regexp     PATTERN æ˜¯ä¸€ä¸ªå¯æ‰©å±•çš„æ­£åˆ™è¡¨è¾¾å¼(ç¼©å†™ä¸º ERE)
+  -F, --fixed-strings       PATTERN æ˜¯ä¸€ç»„ç”±æ–­è¡Œç¬¦åˆ†éš”çš„å®šé•¿å­—ç¬¦ä¸²ã€‚
+  -G, --basic-regexp        PATTERN æ˜¯ä¸€ä¸ªåŸºæœ¬æ­£åˆ™è¡¨è¾¾å¼(ç¼©å†™ä¸º BRE)
+  -P, --perl-regexp         PATTERN æ˜¯ä¸€ä¸ª Perl æ­£åˆ™è¡¨è¾¾å¼
+  -e, --regexp=PATTERN      ç”¨ PATTERN æ¥è¿›è¡ŒåŒ¹é…æ“ä½œ
+  -f, --file=FILE           ä»Ž FILE ä¸­å–å¾— PATTERN
+  -i, --ignore-case         å¿½ç•¥å¤§å°å†™
+  -w, --word-regexp         å¼ºåˆ¶ PATTERN ä»…å®Œå…¨åŒ¹é…å­—è¯
+  -x, --line-regexp         å¼ºåˆ¶ PATTERN ä»…å®Œå…¨åŒ¹é…ä¸€è¡Œ
+  -z, --null-data           ä¸€ä¸ª 0 å­—èŠ‚çš„æ•°æ®è¡Œï¼Œä½†ä¸æ˜¯ç©ºè¡Œ
 
 Miscellaneous:
   -s, --no-messages         suppress error messages
@@ -62,12 +62,12 @@ Context control:
   -U, --binary              do not strip CR characters at EOL (MSDOS)
   -u, --unix-byte-offsets   report offsets as if CRs were not there (MSDOS)
 
-¡®egrep¡¯¼´¡®grep -E¡¯¡£¡®fgrep¡¯¼´¡®grep -F¡¯¡£
-Ö±½ÓÊ¹ÓÃ¡®egrep¡¯»òÊÇ¡®fgrep¡¯¾ùÒÑ²»¿ÉÐÐÁË¡£
-²»´ø FILE ²ÎÊý£¬»òÊÇ FILE Îª -£¬½«¶ÁÈ¡±ê×¼ÊäÈë¡£Èç¹ûÉÙÓÚÁ½¸ö FILE ²ÎÊý
-¾ÍÒªÄ¬ÈÏÊ¹ÓÃ -h ²ÎÊý¡£Èç¹ûÑ¡ÖÐÈÎÒâÒ»ÐÐ£¬ÄÇÍË³ö×´Ì¬Îª 0£¬·ñÔòÎª 1£»
-Èç¹ûÓÐ´íÎó²úÉú£¬ÇÒÎ´Ö¸¶¨ -q ²ÎÊý£¬ÄÇÍË³ö×´Ì¬Îª 2¡£
+â€˜egrepâ€™å³â€˜grep -Eâ€™ã€‚â€˜fgrepâ€™å³â€˜grep -Fâ€™ã€‚
+ç›´æŽ¥ä½¿ç”¨â€˜egrepâ€™æˆ–æ˜¯â€˜fgrepâ€™å‡å·²ä¸å¯è¡Œäº†ã€‚
+ä¸å¸¦ FILE å‚æ•°ï¼Œæˆ–æ˜¯ FILE ä¸º -ï¼Œå°†è¯»å–æ ‡å‡†è¾“å…¥ã€‚å¦‚æžœå°‘äºŽä¸¤ä¸ª FILE å‚æ•°
+å°±è¦é»˜è®¤ä½¿ç”¨ -h å‚æ•°ã€‚å¦‚æžœé€‰ä¸­ä»»æ„ä¸€è¡Œï¼Œé‚£é€€å‡ºçŠ¶æ€ä¸º 0ï¼Œå¦åˆ™ä¸º 1ï¼›
+å¦‚æžœæœ‰é”™è¯¯äº§ç”Ÿï¼Œä¸”æœªæŒ‡å®š -q å‚æ•°ï¼Œé‚£é€€å‡ºçŠ¶æ€ä¸º 2ã€‚
 
 Report bugs to: bug-grep@gnu.org
-GNU Grep Ö÷Ò³: <http://www.gnu.org/software/grep/>
-GNU Èí¼þµÄÍ¨ÓÃ°ïÖú: <http://www.gnu.org/gethelp/>
+GNU Grep ä¸»é¡µ: <http://www.gnu.org/software/grep/>
+GNU è½¯ä»¶çš„é€šç”¨å¸®åŠ©: <http://www.gnu.org/gethelp/>

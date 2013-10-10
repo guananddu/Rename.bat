@@ -1,68 +1,68 @@
-�÷���cp [ѡ��]... [-T] Դ�ļ� Ŀ���ļ�
-����cp [ѡ��]... Դ�ļ�... Ŀ¼
-����cp [ѡ��]... -t Ŀ¼ Դ�ļ�...
-��Դ�ļ�������Ŀ���ļ����򽫶��Դ�ļ�������Ŀ��Ŀ¼��
+用法：cp [选项]... [-T] 源文件 目标文件
+　或：cp [选项]... 源文件... 目录
+　或：cp [选项]... -t 目录 源文件...
+将源文件复制至目标文件，或将多个源文件复制至目标目录。
 
-��ѡ�����ʹ�õĲ������ڶ�ѡ��ʱҲ�Ǳ���ʹ�õġ�
-  -a, --archive			����-dR --preserve=all
-      --attributes-only	���������Զ�����������      --backup[=CONTROL		Ϊÿ���Ѵ��ڵ�Ŀ���ļ���������
-  -b				����--backup �������ܲ���
-      --copy-contents		�ڵݹ鴦���Ǹ��������ļ�����
-  -d				����--no-dereference --preserve=links
-  -f, --force			���Ŀ���ļ��޷��������Ƴ�������(�� -n ѡ��
-					����ʱ������ѡ����)
-  -i, --interactive		����ǰѯ��(ʹǰ��� -n ѡ��ʧЧ)
-  -H				����Դ�ļ��е������з�������
+长选项必须使用的参数对于短选项时也是必需使用的。
+  -a, --archive			等于-dR --preserve=all
+      --attributes-only	仅复制属性而不复制数据      --backup[=CONTROL		为每个已存在的目标文件创建备份
+  -b				类似--backup 但不接受参数
+      --copy-contents		在递归处理是复制特殊文件内容
+  -d				等于--no-dereference --preserve=links
+  -f, --force			如果目标文件无法打开则将其移除并重试(当 -n 选项
+					存在时则不需再选此项)
+  -i, --interactive		覆盖前询问(使前面的 -n 选项失效)
+  -H				跟随源文件中的命令行符号链接
   -l, --link                   hard link files instead of copying
   -L, --dereference            always follow symbolic links in SOURCE
-  -n, --no-clobber		��Ҫ�����Ѵ��ڵ��ļ�(ʹǰ��� -i ѡ��ʧЧ)
-  -P, --no-dereference		������Դ�ļ��еķ�������
-  -p				����--preserve=ģʽ,����Ȩ,ʱ���
-      --preserve[=�����б�	����ָ��������(Ĭ�ϣ�ģʽ,����Ȩ,ʱ���)�����
-					���ܱ��ָ������ԣ����������ӡ�xattr ��
-      --sno-preserve=�����б�	������ָ�����ļ�����
-      --parents			����ǰ��Ŀ��Ŀ¼������Դ�ļ�·���е�����Ŀ¼
-  -R, -r, --recursive		�ݹ鸴��Ŀ¼������Ŀ¼�ڵ���������
-      --reflink[=WHEN]		���ƿ�¡/CoW ��������鿴��������硣
-      --remove-destination	���Դ�Ŀ���ļ�ǰ��ɾ���Ѵ��ڵ�Ŀ�ĵ�
-					�ļ� (����� --force ѡ��)
-      --sparse=WHEN		���ƴ���ϡ���ļ��ķ�ʽ
-      --strip-trailing-slashes	ɾ������������Դ�ļ�/Ŀ¼ĩ�˵�б��
-  -s, --symbolic-link		ֻ�����������Ӷ��������ļ�
-  -S, --suffix=��׺		����ָ�������ļ��ĺ�׺
-  -t,  --target-directory=Ŀ¼	�����в���ָ����Դ�ļ�/Ŀ¼
-                                           ������Ŀ��Ŀ¼
-  -T, --no-target-directory	��Ŀ��Ŀ¼������ͨ�ļ�
-  -u, --update			ֻ��Դ�ļ���Ŀ���ļ��£���Ŀ���ļ�
-					������ʱ�Ž��и���
-  -v, --verbose		��ʾ��ϸ�Ľ��в���
-  -x, --one-file-system	����Խ�ļ�ϵͳ���в���
-      --help		��ʾ�˰�����Ϣ���˳�
-      --version		��ʾ�汾��Ϣ���˳�
+  -n, --no-clobber		不要覆盖已存在的文件(使前面的 -i 选项失效)
+  -P, --no-dereference		不跟随源文件中的符号链接
+  -p				等于--preserve=模式,所有权,时间戳
+      --preserve[=属性列表	保持指定的属性(默认：模式,所有权,时间戳)，如果
+					可能保持附加属性：环境、链接、xattr 等
+      --sno-preserve=属性列表	不保留指定的文件属性
+      --parents			复制前在目标目录创建来源文件路径中的所有目录
+  -R, -r, --recursive		递归复制目录及其子目录内的所有内容
+      --reflink[=WHEN]		控制克隆/CoW 副本。请查看下面的内如。
+      --remove-destination	尝试打开目标文件前先删除已存在的目的地
+					文件 (相对于 --force 选项)
+      --sparse=WHEN		控制创建稀疏文件的方式
+      --strip-trailing-slashes	删除参数中所有源文件/目录末端的斜杠
+  -s, --symbolic-link		只创建符号链接而不复制文件
+  -S, --suffix=后缀		自行指定备份文件的后缀
+  -t,  --target-directory=目录	将所有参数指定的源文件/目录
+                                           复制至目标目录
+  -T, --no-target-directory	将目标目录视作普通文件
+  -u, --update			只在源文件比目标文件新，或目标文件
+					不存在时才进行复制
+  -v, --verbose		显示详细的进行步骤
+  -x, --one-file-system	不跨越文件系统进行操作
+      --help		显示此帮助信息并退出
+      --version		显示版本信息并退出
 
-Ĭ������£�Դ�ļ���ϡ���Խ���ͨ���򵥵ķ����жϣ���Ӧ��Ŀ���ļ�Ŀ���ļ�Ҳ
-��Ϊϡ�衣������ΪĬ�������ʹ����--sparse=auto �����������ȷʹ��
---sparse=always ��������Դ�ļ��Ƿ�����㹻����0 ����Ҳ��Ŀ���ļ�����
-��Ϊϡ�����
-ʹ��--sparse=never ������ֹ����ϡ���ļ���
+默认情况下，源文件的稀疏性仅仅通过简单的方法判断，对应的目标文件目标文件也
+被为稀疏。这是因为默认情况下使用了--sparse=auto 参数。如果明确使用
+--sparse=always 参数则不论源文件是否包含足够长的0 序列也将目标文件创文
+建为稀疏件。
+使用--sparse=never 参数禁止创建稀疏文件。
 
-��ָ����--reflink[=always] ����ʱִ���������ĸ��ƣ���ֻ�����ݿ鱻�޸ĵ�
-����²Ÿ��ơ��������ʧ�ܻ���ͬʱָ����--reflink=auto���򷵻ر�׼����ģʽ��
+当指定了--reflink[=always] 参数时执行轻量化的复制，即只在数据块被修改的
+情况下才复制。如果复制失败或者同时指定了--reflink=auto，则返回标准复制模式。
 
-�����ļ��ĺ�׺Ϊ"~"��������--suffix ѡ�����SIMPLE_BACKUP_SUFFIX
-��������ָ�����汾���Ƶķ�ʽ��ͨ��--backup ѡ���VERSION_CONTROL ����
-������ѡ�������ǿ��õı���ֵ��
+备份文件的后缀为"~"，除非以--suffix 选项或是SIMPLE_BACKUP_SUFFIX
+环境变量指定。版本控制的方式可通过--backup 选项或VERSION_CONTROL 环境
+变量来选择。以下是可用的变量值：
 
-  none, off       �����б���(��ʹʹ����--backup ѡ��)
-  numbered, t     �����ļ��������ֽ�������
-  existing, nil   �������ֵı����ļ��Ѿ�������ʹ�����֣�����ʹ����ͨ��ʽ����
-  simple, never   ��Զʹ����ͨ��ʽ����
+  none, off       不进行备份(即使使用了--backup 选项)
+  numbered, t     备份文件加上数字进行排序
+  existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
+  simple, never   永远使用普通方式备份
 
-��һ���ر���������ͬʱָ��--force ��--backup ѡ���Դ�ļ���Ŀ���ļ�
-��ͬһ���Ѵ��ڵ�һ���ļ��Ļ���cp �ὫԴ�ļ����ݡ�
+有一个特别情况：如果同时指定--force 和--backup 选项，而源文件和目标文件
+是同一个已存在的一般文件的话，cp 会将源文件备份。
 
-����bug-coreutils@gnu.org ����cp �Ĵ���
-GNU coreutils ����ҳ��<http://www.gnu.org/software/coreutils/>
-GNU ����һ���԰�����<http://www.gnu.org/gethelp/>
-����<http://translationproject.org/team/zh_CN.html> ����cp �ķ������
-Ҫ��ȡ�����ĵ��������У�info coreutils 'cp invocation'
+请向bug-coreutils@gnu.org 报告cp 的错误
+GNU coreutils 的主页：<http://www.gnu.org/software/coreutils/>
+GNU 软件一般性帮助：<http://www.gnu.org/gethelp/>
+请向<http://translationproject.org/team/zh_CN.html> 报告cp 的翻译错误
+要获取完整文档，请运行：info coreutils 'cp invocation'
