@@ -114,3 +114,5 @@ echo "Done.Ok."
 rm ./.temp.replace.sh
 rm ./.temp.append.sh
 rm ./.temp.num.sh
+
+#有一种简单方式，直接使用for循环，文件名是确定的
